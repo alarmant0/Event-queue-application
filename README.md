@@ -26,3 +26,13 @@ Execute the following command to build the Docker images, start all containers, 
 
 ```bash
 docker-compose build && docker-compose up -d && curl -I -H "Host: producer" -X POST http://localhost:8080/publish
+```
+
+### Viewing Logs
+
+To view the logs of a specific container, use the following command:
+
+```bash
+docker-compose logs producer
+docker-compose logs consumer
+
