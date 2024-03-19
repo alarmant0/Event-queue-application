@@ -33,6 +33,13 @@ docker-compose build && docker-compose up -d && curl -I -H "Host: producer" -X P
 To view the logs of the container, use the following command:
 
 ```bash
-docker-compose logs producer
-docker-compose logs consumer
+docker-compose logs producer -f
+docker-compose logs consumer -f
+```
 
+### Monitoring Message Consumption
+
+To monitor message consumption by the consumer, use the following command:
+
+```bash
+watch -n 0.1 docker exec -it redis redis-cli LLEN esilv
