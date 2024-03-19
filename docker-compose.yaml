@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "8080:80"
+    container_name: nginx
+    depends_on:
+      - producer
+      - consumer
+    networks:
+      - app-network
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    networks:
+      - app-network
+
+  consumer:
+    build: ./consumer
+    container_name: consumer
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+  producer:
+    build: ./producer
+    container_name: producer
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
