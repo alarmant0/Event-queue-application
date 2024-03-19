@@ -18,6 +18,7 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/alarmant0/Event-queue-application
 cd Event-queue-application
+```
 
 ### 2. Building Docker Images, Starting Containers, and Testing the Setup
 
