@@ -28,6 +28,14 @@ Execute the following command to build the Docker images, start all containers, 
 docker-compose build && docker-compose up -d && curl -I -H "Host: producer" -X POST http://localhost:8080/publish
 ```
 
+### Publishing Messages
+
+To publish 100 messages to the producer, use the following command:
+
+```bash
+curl -H "Host: producer" -X POST http://localhost:8080/publish/100
+````
+
 ### Viewing Logs
 
 To view the logs of the container, use the following command:
