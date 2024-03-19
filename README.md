@@ -30,7 +30,7 @@ docker-compose build && docker-compose up -d && curl -I -H "Host: producer" -X P
 
 ### Viewing Logs
 
-To view the logs of a specific container, use the following command:
+To view the logs of the container, use the following command:
 
 ```bash
 docker-compose logs producer
